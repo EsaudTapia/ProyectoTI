@@ -1,8 +1,8 @@
 
 
-def usuario():
+def usuario(nom):
     validado = True
-    nombre = input("Ingresa tu nombre de usuario: ")
+    nombre = nom
     
     if len(nombre) < 6:
         validado = False
@@ -18,10 +18,7 @@ def usuario():
         print("El nombre de usuario puede contener solo letras y números.")
         validado = False
         
-    if(validado):
-        passw()
-    else:
-        usuario()
+    return validado
 
 def passw():
     validado = True
@@ -43,18 +40,28 @@ def passw():
         if char.isupper():
             mayuscula = True
             
-        if char.isalnum():
+        if char.isalnum(): 
             noalfa = True
         if char.isdigit():
             numeros = True
         
     
     if(validado and mayuscula and minuscula and numeros and noalfa):
-        return True
+         print("Todo esta validado")
     else:
         print(msj)
         passw()
     
+def main():
+    nom = input("Ingresa tu nombre de usuario: ")
+    res = usuario(nom)
+    
+    if res:
+        passw()
+           
+    else:
+        main()
+    
 
 if __name__=='__main__':
-    usuario()
+    main()
