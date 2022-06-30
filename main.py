@@ -1,6 +1,6 @@
 
 
-from sqlalchemy import false
+from sqlalchemy import false, true
 
 
 def usuario(nom):
@@ -28,13 +28,18 @@ def passw():
     password = input("Ingresa tu password: ")
     msj = "La contraseña elegida no es segura."
     
- 
+    countEsp = 0
+    countAlnum = 0
+    countMayu= 0
+    countMin= 0
+    countDigit=0
     mayuscula = False
     minuscula = False
     numeros = False
     noalfa = False
     espacio = False
     validado = False
+    
     
     
     ext=len(password)
@@ -47,33 +52,61 @@ def passw():
     for char in password:
         
         if char.islower():
-            minuscula = True
-        else:
-            msj='Debe tener letras'
+            countMin +=1
+        
             
         if char.isupper():
-            mayuscula = True
-        else:
-            msj='Debe tener minimo uan letra mayuscuala'
+           countMayu +=1
             
             
         if char.isalnum():               
-            msj='La contraseña debe ser alfanumerica '
+            i=''
         else:
-           noalfa = True
-        
-        
+            countAlnum +=1;
+                          
         if char.isdigit():
-            numeros = True
-        else:
-            msj='Debe tener minimo un numero'    
+            countDigit +=1 
+          
             
             
-        if char.isspace():
-             msj='No debe tener espacio'  
-         
+       
+      
+    
+        for i in range(0, len(password)):                   
+                if password[i] == " ": 
+                    countEsp += 1
+        
+        
+        if countMin>0:
+            msj='debe contener minimo una minuscula'
         else:
-             espacio  = True
+            espacio= True
+            
+        if countMayu>0:
+            msj='debe contener minimo una Mayuscula'
+        else:
+            espacio= True
+        
+        if countEsp>0:
+            msj='no debe contener espcios'
+        else:
+            espacio= True
+                        
+        if countDigit >0 :
+            msj='Debe contener minimo un numero'
+        else:
+            numeros=True
+        
+        if countAlnum >0 :
+            msj='Debe ser alfanumerico'
+        else:
+            noalfa=True
+            
+       
+            
+            
+        
+
             
       
     
