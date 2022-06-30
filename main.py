@@ -1,5 +1,8 @@
 
 
+from sqlalchemy import false
+
+
 def usuario(nom):
     validado = True
     nombre = nom
@@ -31,10 +34,11 @@ def passw():
     numeros = False
     noalfa = False
     espacio = False
+    validado = False
     
     
     ext=len(password)
-    if ext<= 8:
+    if ext>= 8:
         validado = True
     else:
          msj = "La contraseña debe tener un tamaño de 8 caracteres"
@@ -53,10 +57,10 @@ def passw():
             msj='Debe tener minimo uan letra mayuscuala'
             
             
-        if char.isalnum(): 
-            noalfa = True
+        if char.isalnum():               
+             i= ''
         else:
-            msj='Debe tener minimo un alfanumerico'    
+           noalfa = True
         
         
         if char.isdigit():
@@ -66,9 +70,10 @@ def passw():
             
             
         if char.isspace():
-           espacio  = True
+             msj='No debe tener espacio'  
+         
         else:
-            msj='No debe tener espacio'  
+             espacio  = True
             
       
     
