@@ -25,28 +25,54 @@ def passw():
     password = input("Ingresa tu password: ")
     msj = "La contraseña elegida no es segura."
     
-    if len(password) < 8:
-        validado = False
-    
+ 
     mayuscula = False
     minuscula = False
     numeros = False
     noalfa = False
+    espacio = False
+    
+    
+    ext=len(password)
+    if ext<= 8:
+        validado = True
+    else:
+         msj = "La contraseña debe tener un tamaño de 8 caracteres"
+    
     
     for char in password:
         
         if char.islower():
             minuscula = True
+        else:
+            msj='Debe tener letras'
+            
         if char.isupper():
             mayuscula = True
+        else:
+            msj='Debe tener minimo uan letra mayuscuala'
+            
             
         if char.isalnum(): 
             noalfa = True
+        else:
+            msj='Debe tener minimo un alfanumerico'    
+        
+        
         if char.isdigit():
             numeros = True
-        
+        else:
+            msj='Debe tener minimo un numero'    
+            
+            
+        if char.isspace():
+           espacio  = True
+        else:
+            msj='No debe tener espacio'  
+            
+      
     
-    if(validado and mayuscula and minuscula and numeros and noalfa):
+    if(validado and mayuscula and minuscula and numeros and noalfa ):
          print("Todo esta validado")
     else:
         print(msj)
