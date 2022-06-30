@@ -58,7 +58,7 @@ def passw():
             
             
         if char.isalnum():               
-             i= ''
+            msj='Debe tener almenos un caracter no alfanumerico '
         else:
            noalfa = True
         
