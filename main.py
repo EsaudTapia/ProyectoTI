@@ -72,34 +72,34 @@ def passw():
        
       
     
-        for i in range(0, len(password)):                   
-                if password[i] == " ": 
-                    countEsp += 1
+    for i in range(0, len(password)):                   
+          if password[i] == " ": 
+              countEsp += 1
         
         
-        if countMin>0:
-            msj='debe contener minimo una minuscula'
-        else:
-            espacio= True
+    if countMin<0:
+        msj='debe contener minimo una minuscula'
+    else:
+        minuscula= True
             
-        if countMayu>0:
-            msj='debe contener minimo una Mayuscula'
-        else:
-            espacio= True
+    if countMayu<0:
+        msj='debe contener minimo una Mayuscula'
+    else:
+        mayuscula= True
         
-        if countEsp>0:
+    if countEsp<0:
             msj='no debe contener espcios'
-        else:
+    else:
             espacio= True
                         
-        if countDigit >0 :
+    if countDigit <0 :
             msj='Debe contener minimo un numero'
-        else:
+    else:
             numeros=True
         
-        if countAlnum >0 :
-            msj='Debe ser alfanumerico'
-        else:
+    if countAlnum <=0 :
+            msj='Debe tener un no alfabetico y no numerico'
+    else:
             noalfa=True
             
        
