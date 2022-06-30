@@ -77,22 +77,22 @@ def passw():
               countEsp += 1
         
         
-    if countMin<0:
+    if countMin<=0:
         msj='debe contener minimo una minuscula'
     else:
         minuscula= True
             
-    if countMayu<0:
+    if countMayu<=0:
         msj='debe contener minimo una Mayuscula'
     else:
         mayuscula= True
         
-    if countEsp<0:
+    if countEsp>0:
             msj='no debe contener espcios'
     else:
             espacio= True
                         
-    if countDigit <0 :
+    if countDigit <=0 :
             msj='Debe contener minimo un numero'
     else:
             numeros=True
