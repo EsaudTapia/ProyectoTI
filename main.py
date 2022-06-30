@@ -72,7 +72,7 @@ def passw():
             
       
     
-    if(validado and mayuscula and minuscula and numeros and noalfa ):
+    if(validado and mayuscula and minuscula and numeros and noalfa  and espacio):
          print("Todo esta validado")
     else:
         print(msj)
