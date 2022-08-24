@@ -1,6 +1,12 @@
 
 
 
+
+
+
+#S3 termino y nos puso un 10 el ogt
+
+
 def main():
     tam = input("Cuantos nombres ingrsaras: ")
     tam = int(tam)
@@ -27,6 +33,6 @@ def main():
         p+=1
         
         
-
+#a todos nos dijo que eramos los mejores
 if __name__=='__main__':
     main()
