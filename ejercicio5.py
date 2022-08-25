@@ -1,5 +1,5 @@
 
-
+#l,dclcc,. cls,cla,scls,dc lsc lsdc,lsdc sldc sldcls,dclsd,clsd,cl sdlc sldc lsdclsd,c
 
 def main():
     k = input("Ingresa el valor K: ")
