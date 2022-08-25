@@ -4,7 +4,7 @@
 
 
 
-#S3 termino y nos puso un 10 el ogt
+#S3 termino y nos puso un 10 el ogt ksdmklamckamc
 
 
 def main():
